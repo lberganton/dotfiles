@@ -1,12 +1,32 @@
 return {
+  -- Mason configuration
+  {
+    "williamboman/mason-lspconfig.nvim",
+    ensure_installed = {
+      "clangd",
+      "pyright",
+      "jdtls",
+    },
+  },
+
   -- LSP's configuration
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("lspconfig").clangd.setup({
+      lspconfig = require("lspconfig")
+
+      -- C language
+      lspconfig.clangd.setup({
         handlers = {
           ["textDocument/signatureHelp"] = function() end,
         },
+      })
+
+      -- Python
+      lspconfig.pyright.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "python" },
       })
     end,
   },
