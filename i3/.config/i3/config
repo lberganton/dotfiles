@@ -15,6 +15,7 @@ exec_always xrandr --output DP-0 --mode 1920x1080 --rate 144
 exec_always picom -b
 
 # Etc.
+exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id nm-applet
 exec nitrogen --restore
 
@@ -174,20 +175,25 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Link some applications to specific workspaces
 assign [class="Chromium"] 2
 assign [class="discord"] 4
+assign [class="okular"] 3
+assign [class="Virt-manager"] 5
 
 # Define some aplicattions layout
-for_window [class="Chromium" workspace="2"] layout tabbed
-for_window [class="Galculator"] floating enable 
-for_window [class="Thunar"] floating enable 
+for_window [class="Chromium"] layout tabbed
+for_window [class="Galculator"] floating enable
+for_window [class="Thunar"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
+for_window [class="Sxiv"] floating enable
+for_window [class="vlc"] floating enable
 
 # Bindings
-bindsym $mod+b exec --no-startup-id chromium 
+bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id discord
 bindsym $mod+e exec --no-startup-id "alacritty -e yazi $($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+Shift+e exec --no-startup-id "thunar $($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+c exec --no-startup-id galculator
+bindsym $mod+v exec --no-startup-id virt-manager
 
 
 #################################
