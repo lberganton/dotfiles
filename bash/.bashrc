@@ -24,19 +24,15 @@ shopt -s histappend
 [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 ### Prompt
-PROMPT_COMMAND='
-git_branch=$(git branch --show-current 2>/dev/null)
-git_branch=${git_branch:+ ${git_branch} }
-'
-PS1='\[\e[32;1m\]\u\[\e[0m\]: \[\e[36m\]\w\[\e[0m\] \[\e[31;1m\]${git_branch}\[\e[0m\] \[\e[90m\]\D{%H:%M}\n\[\e[36m\]>\[\e[0m\] '
+PS1='\[\e[32;1m\]\u\[\e[0m\]: \[\e[36m\]\w\[\e[0m\] \[\e[90m\]\D{%H:%M}\n\[\e[36m\]>\[\e[0m\] '
 
 ### Aliases
 alias ..='cd ..'
 alias ...='cd ../..'
 alias tree='tree --dirsfirst -C'
 alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -l'
-alias la='ls -Al'
+alias ll='ls -lh'
+alias la='ls -Alh'
 alias grep='grep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -47,11 +43,11 @@ alias ip='ip --color=auto'
 # Change terminal title
 case ${TERM} in
 xterm* | rxvt* | Eterm* | aterm | kterm | gnome* | alacritty | st | konsole*)
-	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
-	;;
+  PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
+  ;;
 screen*)
-	PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
-	;;
+  PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
+  ;;
 esac
 
 # Colors for 'less'
