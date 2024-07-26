@@ -63,4 +63,4 @@ export LESS_TERMCAP_ue=$'\e[0m'
 [[ -f ~/.config/yazi/yazicwd.sh ]] && . ~/.config/yazi/yazicwd.sh && export -f yy
 
 ### Run starship
-command -v starship >/dev/null 2>&1 && [ "$TERM" = "xterm-256color" ] && eval "$(starship init bash)"
+command -v starship >/dev/null 2>&1 && [[ $TERM == xterm-* ]] && eval "$(starship init bash)"
