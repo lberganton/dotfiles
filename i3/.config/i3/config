@@ -60,8 +60,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # Terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec "alacritty --working-directory $($HOME/.config/i3/getcwd.sh)"
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec "kitty --working-directory $($HOME/.config/i3/getcwd.sh)"
 
 # Program launcher
 bindsym $mod+dead_grave exec --no-startup-id dmenu_run
@@ -189,7 +189,7 @@ for_window [class="vlc"] floating enable
 # Bindings
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id discord
-bindsym $mod+e exec --no-startup-id "alacritty -e yazi $($HOME/.config/i3/getcwd.sh)"
+bindsym $mod+e exec --no-startup-id "kitty yazi $($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+Shift+e exec --no-startup-id "thunar $($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+c exec --no-startup-id galculator
 bindsym $mod+v exec --no-startup-id virt-manager
