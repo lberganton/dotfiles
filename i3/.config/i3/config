@@ -181,7 +181,6 @@ assign [class="Virt-manager"] 5
 # Define some aplicattions layout
 for_window [class="Chromium"] layout tabbed
 for_window [class="Galculator"] floating enable
-for_window [class="Thunar"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="Sxiv"] floating enable
