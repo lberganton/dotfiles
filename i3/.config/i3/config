@@ -183,7 +183,7 @@ for_window [class="vlc"] floating enable
 
 # Bindings
 bindsym $mod+b exec --no-startup-id chromium
-bindsym $mod+d exec --no-startup-id discord
+bindsym $mod+d exec --no-startup-id flatpak run com.discordapp.Discord
 bindsym $mod+e exec --no-startup-id "kitty yazi $($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+Shift+e exec --no-startup-id "thunar $($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+c exec --no-startup-id galculator
