@@ -6,12 +6,7 @@ set $mod Mod4
 #           Basic               #
 #################################
 
-# Keyboard
-exec_always setxkbmap -layout us -variant intl
-exec_always numlockx on
-
 # Video
-exec_always xrandr --output DP-0 --mode 1920x1080 --rate 144
 exec_always picom -b
 
 # Etc.
