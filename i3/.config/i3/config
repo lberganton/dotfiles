@@ -45,8 +45,8 @@ bindsym $mod+q kill
 bindsym $mod+F1 reload
 bindsym $mod+F2 restart
 bindsym $mod+F3 exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
-bindsym $mod+Escape exec "i3-nagbar -t warning -m 'Do you really want to power off?' -B 'Yes' 'shutdown now'"
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'Do you really want to reboot?' -B 'Yes' 'reboot'"
+bindsym $mod+F4 exec "i3-nagbar -t warning -m 'Do you really want to power off?' -B 'Yes' 'shutdown now'"
+bindsym $mod+F5 exec "i3-nagbar -t warning -m 'Do you really want to reboot?' -B 'Yes' 'reboot'"
 bindsym Print exec --no-startup-id "gnome-screenshot -i"
 
 # Volume
@@ -184,8 +184,8 @@ for_window [class="vlc"] floating enable
 # Bindings
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id flatpak run com.discordapp.Discord
-bindsym $mod+e exec --no-startup-id "kitty yazi $($HOME/.config/i3/getcwd.sh)"
-bindsym $mod+Shift+e exec --no-startup-id "thunar $($HOME/.config/i3/getcwd.sh)"
+bindsym $mod+e exec --no-startup-id kitty yazi $($HOME/.config/i3/getcwd.sh)
+bindsym $mod+Shift+e exec --no-startup-id thunar $($HOME/.config/i3/getcwd.sh)
 bindsym $mod+c exec --no-startup-id galculator
 bindsym $mod+v exec --no-startup-id virt-manager
 
