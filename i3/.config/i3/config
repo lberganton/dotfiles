@@ -12,6 +12,7 @@ exec_always picom -b
 # Etc.
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 exec nitrogen --restore
 
 
