@@ -32,6 +32,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 numlockx on &
 setxkbmap -layout us -variant intl &
 xrandr --output DP-0 --mode 1920x1080 --rate 144 &
