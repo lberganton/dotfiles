@@ -8,8 +8,7 @@
 [[ $- != *i* ]] && return
 
 ### Basic
-export EDITOR=nvim
-export MANPAGER='nvim +Man!'
+command -v nvim >/dev/null && export EDITOR='nvim' && export MANPAGER='nvim +Man!'
 
 # History
 HISTCONTROL=ignoreboth
@@ -29,15 +28,19 @@ PS1='\[\e[32;1m\]\u\[\e[0m\]: \[\e[36m\]\w\[\e[0m\] \[\e[90m\]\D{%H:%M}\n\[\e[36
 ### Aliases
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias tree='tree --dirsfirst -C'
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
-alias la='ls -Alh'
+alias la='ls -A'
+alias lla='ls -Alh'
 alias grep='grep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
+alias rm='rm -I'
 alias da='du -d1 --apparent-size -h'
 alias ip='ip --color=auto'
+alias diff='diff --color=auto'
 
 ### Program configurations
 # Change terminal title
@@ -64,3 +67,5 @@ export LESS_TERMCAP_ue=$'\e[0m'
 
 ### Run starship
 command -v starship >/dev/null 2>&1 && [[ $TERM == xterm-* ]] && eval "$(starship init bash)"
+
+[ -f "/home/lberganton/.ghcup/env" ] && . "/home/lberganton/.ghcup/env" # ghcup-env
