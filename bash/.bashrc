@@ -4,6 +4,12 @@
 # Created: 06/15/2024
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# Sets 'yy', an yazi alias that can change the working direcotry
+[ -f ~/.config/yazi/yazicwd.sh ] && . ~/.config/yazi/yazicwd.sh && export -f yy
+
+# GHCup environment
+[ -f "/home/lberganton/.ghcup/env" ] && . "/home/lberganton/.ghcup/env"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -53,19 +59,5 @@ screen*)
   ;;
 esac
 
-# Colors for 'less'
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_us=$'\e[01;4;31m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_ue=$'\e[0m'
-
-# Sets 'yy', an yazi alias that can change the working direcotry
-[[ -f ~/.config/yazi/yazicwd.sh ]] && . ~/.config/yazi/yazicwd.sh && export -f yy
-
 ### Run starship
-command -v starship >/dev/null 2>&1 && [[ $TERM == xterm-* ]] && eval "$(starship init bash)"
-
-[ -f "/home/lberganton/.ghcup/env" ] && . "/home/lberganton/.ghcup/env" # ghcup-env
+command -v starship >/dev/null 2>&1 && [[ "$TERM" == xterm-* || "$TERM" == tmux-* ]] && eval "$(starship init bash)"

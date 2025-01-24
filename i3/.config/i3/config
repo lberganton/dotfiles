@@ -177,15 +177,12 @@ assign [class="Virt-manager"] 5
 # Define some aplicattions layout
 for_window [class="Chromium"] layout tabbed
 for_window [class="Qalculate-gtk"] floating enable
-for_window [class="Nitrogen"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
-for_window [class="Sxiv"] floating enable
-for_window [class="vlc"] floating enable
 
 # Bindings
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id discord
-bindsym $mod+e exec --no-startup-id kitty yazi "$($HOME/.config/i3/getcwd.sh)"
+bindsym $mod+e exec --no-startup-id kitty -d "$($HOME/.config/i3/getcwd.sh)" bash -ic "yy && bash"
 bindsym $mod+Shift+e exec --no-startup-id thunar "$($HOME/.config/i3/getcwd.sh)"
 bindsym $mod+c exec --no-startup-id qalculate-gtk
 bindsym $mod+v exec --no-startup-id virt-manager
