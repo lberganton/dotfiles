@@ -1,51 +1,79 @@
-" Basic
+" General
 set nocompatible
-filetype on
-filetype plugin on
-set title
-set undolevels=1000
 set encoding=utf-8
+set confirm
 set mouse=a
-
-" Identation
-filetype indent on
+set tabstop=2
+set shiftwidth=2
 set autoindent
 set smartindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set shiftround
 set expandtab
+set undolevels=1000
+set undofile
+set title
 
 " Visual
 syntax on
+set wrap
 set number
 set relativenumber
+set laststatus=2
+set scrolloff=4
+set sidescrolloff=8
+set signcolumn=yes
+set showmatch
+set cursorline
+highlight CursorLine cterm=bold ctermbg=black
 set hlsearch
 set incsearch
+colorscheme slate
 
-" Bindings
-let mapleader=' '
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_winsize = 30
 
-noremap <C-s> :w<CR>
-noremap <Leader>s :w<CR>
-noremap <Leader>qq :q<CR>
+" Maps
+let mapleader = " "
+augroup netrw
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
 
-" Move trought the windows
-nnoremap <C-h> :wincmd h<CR>
-nnoremap <C-j> :wincmd j<CR>
-nnoremap <C-k> :wincmd k<CR>
-nnoremap <C-l> :wincmd l<CR>
+" Better Up/Down
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+xnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+nnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
+xnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
+nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+xnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
+xnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
 
-" Move lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <esc>:m .+1<CR>==gi
-inoremap <A-k> <esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<cr>gv=gv
-vnoremap <A-k> :m '<-2<cr>gv=gv
+" Move to window
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-" Buffers
-nnoremap <S-h> :bprevious<CR>
-nnoremap <S-l> :bnext<CR>
-nnoremap <Leader>bd :bdelete<CR>
-nnoremap <Leader>bD :bdelete!<CR>
+" Resize window
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Left> :vertical resize -2<CR>
+nnoremap <C-Right> :vertical resize -2<CR>
+
+" Netrw
+nnoremap <Leader>e :Lexplore<CR>
+
+" Save file
+noremap <C-s> <Esc>:w<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+
+" Quit
+nnoremap <Leader>qq :qa<CR>
+
+" Functions
+function! NetrwMapping()
+  nnoremap <buffer> <C-l> <C-w>l
+endfunction
