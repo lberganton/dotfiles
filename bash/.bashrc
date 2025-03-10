@@ -4,17 +4,17 @@
 # Created: 06/15/2024
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+export PATH="$PATH:$HOME/.bash_scripts"
+
 # Sets 'yy', an yazi alias that can change the working direcotry
 [ -f ~/.config/yazi/yazicwd.sh ] && . ~/.config/yazi/yazicwd.sh && export -f yy
-
-# GHCup environment
-[ -f "/home/lberganton/.ghcup/env" ] && . "/home/lberganton/.ghcup/env"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 ### Basic
-command -v nvim >/dev/null && export EDITOR='nvim' && export MANPAGER='nvim +Man!'
+command -v nvim >/dev/null && export EDITOR='nvim'
+command -v bat>/dev/null && export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # History
 HISTCONTROL=ignoreboth
@@ -29,7 +29,7 @@ shopt -s histappend
 [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 ### Prompt
-PS1='\[\e[32;1m\]\u\[\e[0m\]: \[\e[36m\]\w\[\e[0m\] \[\e[90m\]\D{%H:%M}\n\[\e[36m\]>\[\e[0m\] '
+PS1='\n\[\e[32;1m\]\u\[\e[0m\]: \[\e[36m\]\w\[\e[0m\] \[\e[90m\]\D{%H:%M}\n\[\e[36m\]>\[\e[0m\] '
 
 ### Aliases
 alias ..='cd ..'
@@ -47,6 +47,7 @@ alias rm='rm -I'
 alias da='du -d1 --apparent-size -h'
 alias ip='ip --color=auto'
 alias diff='diff --color=auto'
+alias n='nvim'
 
 ### Program configurations
 # Change terminal title
