@@ -10,7 +10,6 @@ set smartindent
 set shiftround
 set expandtab
 set undolevels=1000
-set undofile
 set title
 
 " Visual
@@ -27,7 +26,6 @@ set cursorline
 highlight CursorLine cterm=bold ctermbg=black
 set hlsearch
 set incsearch
-colorscheme slate
 
 " Netrw
 let g:netrw_banner = 0
