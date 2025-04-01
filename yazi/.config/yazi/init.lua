@@ -1,3 +1,5 @@
+require("full-border"):setup()
+
 local function setup()
 	Manager.render = function(self, area)
 		local chunks = self:layout(area)
