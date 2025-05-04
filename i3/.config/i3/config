@@ -170,9 +170,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Link some applications to specific workspaces
 assign [class="Chromium"] 2
-assign [class="discord"] 4
 assign [class="okular"] 3
 assign [class="Virt-manager"] 5
+assign [class="discord"] 6
 
 # Define some aplicattions layout
 for_window [class="Chromium"] layout tabbed
