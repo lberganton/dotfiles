@@ -26,6 +26,7 @@ set cursorline
 highlight CursorLine cterm=bold ctermbg=black
 set hlsearch
 set incsearch
+colorscheme slate
 
 " Netrw
 let g:netrw_banner = 0
@@ -55,21 +56,39 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Resize window
-nnoremap <C-Up> :resize +2<CR>
-nnoremap <C-Down> :resize -2<CR>
-nnoremap <C-Left> :vertical resize -2<CR>
-nnoremap <C-Right> :vertical resize -2<CR>
+nnoremap <C-Up> :resize +2<cr>
+nnoremap <C-Down> :resize -2<cr>
+nnoremap <C-Left> :vertical resize -2<cr>
+nnoremap <C-Right> :vertical resize -2<cr>
+
+" Move lines
+nnoremap <A-j> :execute 'move .+' . v:count1<cr>==
+nnoremap <A-k> :execute 'move .-' . (v:count1 + 1)<cr>==
+inoremap <A-j> <esc>:m .+1<cr>==gi
+inoremap <A-k> <esc>:m .-2<cr>==gi
+vnoremap <A-j> :<C-u>execute "'<,'>move '>+" . v:count1<cr>gv=gv
+vnoremap <A-k> :<C-u>execute "'<,'>move '<-" . (v:count1 + 1)<cr>gv=gv
+
+" Buffers
+nnoremap <S-h> :bprevious<cr>
+nnoremap <S-l> :bnext<cr>
+nnoremap <leader>bd :bdelete<cr>
 
 " Netrw
-nnoremap <Leader>e :Lexplore<CR>
+nnoremap <Leader>e :Lexplore!<cr>
 
 " Save file
-noremap <C-s> <Esc>:w<CR>
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>
+noremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+inoremap <C-s> <esc>:w<cr>
+
+" Windows
+nnoremap <leader>- <C-W>s
+nnoremap <leader>\| <C-W>v
+nnoremap <leader>wd <C-W>c
 
 " Quit
-nnoremap <Leader>qq :qa<CR>
+nnoremap <Leader>qq :qa<cr>
 
 " Functions
 function! NetrwMapping()
