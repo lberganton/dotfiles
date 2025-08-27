@@ -57,7 +57,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 
 # Terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec "kitty --working-directory $($HOME/.config/i3/getcwd.sh)"
+bindsym $mod+Shift+Return exec kitty --working-directory "$($HOME/.config/i3/getcwd.sh)"
 
 # Program launcher
 bindsym $mod+dead_grave exec --no-startup-id dmenu_run
