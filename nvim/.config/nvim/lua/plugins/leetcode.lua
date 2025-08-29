@@ -5,4 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
   },
+  opts = {
+    -- configuration goes here
+  },
 }
