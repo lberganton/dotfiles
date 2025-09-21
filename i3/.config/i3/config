@@ -169,18 +169,18 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #################################
 
 # Link some applications to specific workspaces
-assign [class="Chromium"] 2
+assign [class="firefox-esr"] 2
 assign [class="okular"] 3
 assign [class="Virt-manager"] 5
 assign [class="discord"] 6
 
 # Define some aplicattions layout
-for_window [class="Chromium"] layout tabbed
+for_window [class="firefox-esr"] layout tabbed
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 
 # Bindings
-bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id firefox-esr
 bindsym $mod+d exec --no-startup-id discord
 bindsym $mod+e exec --no-startup-id kitty -d "$($HOME/.config/i3/getcwd.sh)" bash -ic "yy && bash"
 bindsym $mod+Shift+e exec --no-startup-id thunar "$($HOME/.config/i3/getcwd.sh)"
