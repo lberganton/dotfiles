@@ -26,7 +26,6 @@ set cursorline
 highlight CursorLine cterm=bold ctermbg=black
 set hlsearch
 set incsearch
-colorscheme slate
 
 " Netrw
 let g:netrw_banner = 0

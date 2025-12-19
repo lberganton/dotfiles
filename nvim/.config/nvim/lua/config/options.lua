@@ -5,3 +5,5 @@ vim.g.autoformat = false
 vim.opt.ignorecase = false
 vim.opt.wrap = true
 vim.opt.spelllang = { "pt_br", "en" }
+
+vim.g.c_syntax_for_h = true
