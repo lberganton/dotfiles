@@ -72,7 +72,7 @@ image_bound      = [ 0, 0 ]
 suppress_preload = false
 
 [plugin]
-previewers = [
+prepend_previewers = [
 	{ name = "*/", run = "folder", sync = true },
 	# Code
 	{ mime = "text/*", run = "code" },
