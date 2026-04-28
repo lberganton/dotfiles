@@ -6,8 +6,8 @@
 
 export PATH="$PATH:$HOME/.bash_scripts"
 
-# Sets 'yy', an yazi alias that can change the working direcotry
-[ -f ~/.config/yazi/yazicwd.sh ] && . ~/.config/yazi/yazicwd.sh && export -f yy
+# Sets 'y', an yazi alias that can change the working direcotry
+[ -f ~/.config/yazi/yazicwd.sh ] && . ~/.config/yazi/yazicwd.sh
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
