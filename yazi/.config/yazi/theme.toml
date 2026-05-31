@@ -1,5 +1,5 @@
 [flavor]
 dark = "catppuccin-mocha"
 
-[indicator]
-padding = { open = "", close = "" }
+# [indicator]
+# padding = { open = "", close = "" }
