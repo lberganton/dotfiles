@@ -1,30 +1,18 @@
 return {
-  "folke/noice.nvim",
-  opts = {
-    cmdline = {
-      view = "cmdline",
-    },
+  {
+    "folke/noice.nvim",
+    opts = {
+      -- Setup to not show commands in a popup window.
+      cmdline = {
+        view = "cmdline",
+      },
 
-    presets = {
-      bottom_search = true,
-      command_palette = false,
-      long_message_to_split = false,
-      inc_rename = false,
-      lsp_doc_border = false,
-    },
-
-    messages = {
-      view = "mini",
-    },
-
-    routes = {
-      {
-        filter = {
-          event = "lsp",
-          kind = "progress",
-          find = "jdtls",
+      lsp = {
+        hover = {
+          -- Set not show a message if hover is not available.
+          -- Useful when multiple LSP are running.
+          silent = true,
         },
-        opts = { skip = true },
       },
     },
   },

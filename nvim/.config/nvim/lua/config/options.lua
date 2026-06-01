@@ -2,8 +2,10 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 vim.g.autoformat = false
-vim.opt.ignorecase = false
 vim.opt.wrap = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.spelllang = { "pt_br", "en" }
 
 vim.g.c_syntax_for_h = true
